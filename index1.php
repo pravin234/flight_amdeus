@@ -56,32 +56,27 @@ $accessToken = $_SESSION['access_token'];
     </div>
 
     <script>
-  
-
-function bookFlight(flightOfferData) {
-    if (flightOfferData) {
-        $.ajax({
-            url: 'flight_offers_pricing.php',
-            type: 'POST',
-            data: JSON.stringify(flightOfferData ),
-            contentType: 'application/json',
-            dataType: 'json',
-            success: function (response) {
-                console.log(response);
-                alert(JSON.stringify(response));
-                alert('Flight booked successfully!');
-            },
-            error: function (xhr, status, error) {
-                console.error('AJAX Error:', status, error);
-            },
-        });
-    }
-}
-
-
-
-
-$(document).ready(function(){
+        function bookFlight(flightOfferData) {
+            if (flightOfferData) {
+                $.ajax({
+                    url: 'flight_offers_pricing.php',
+                    type: 'POST',
+                    data: JSON.stringify(flightOfferData ),
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    success: function (response) {
+                        // console.log(response);
+                        // alert(JSON.stringify(response));
+                         displayFlightOfferPopup(response);
+                        alert('Flight booked successfully!');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('AJAX Error:', status, error);
+                    },
+                });
+            }
+        }
+        $(document).ready(function(){
         // Initialize DataTable once on page load
         var dataTable = $('#flightTable').DataTable({
             // DataTable options can be configured here
@@ -137,6 +132,9 @@ $(document).ready(function(){
             return formattedDate.toLocaleString();
         }
     });
+
+
+
 </script>
 
 

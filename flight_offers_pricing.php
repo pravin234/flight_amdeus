@@ -6,7 +6,7 @@ try {
     // Get the JSON data from the POST request
     $flightOffersData = json_decode(file_get_contents('php://input'), true);
     // Print the received data for debugging
-    echo 'Received Flight Offers Data: ' . json_encode($flightOffersData) . '<br>';
+    //echo 'Received Flight Offers Data: ' . json_encode($flightOffersData) . '<br>';
     // API endpoint for flight_offers_pricing.php
     $api_url = 'https://test.api.amadeus.com/v1/shopping/flight-offers/pricing';
     $request_body = json_encode([
@@ -36,14 +36,47 @@ try {
     }
 
     // Decode the JSON response for the API call
-    $api_response = json_decode($response, true);
+   // $api_response = json_decode($response, true);
 
     // Print debug information
-    echo 'Access Token: ' . $_SESSION['access_token'] . '<br>';
-    echo 'API Response: ' . json_encode($api_response);
+    // echo 'Access Token: ' . $_SESSION['access_token'] . '<br>';
+    // echo 'API Response: ' . json_encode($api_response);
 
-    // Close cURL session for the API call
-    curl_close($api_ch);
+
+
+
+   $data = json_decode($response, true);
+
+// Extracting information
+$locations = $data['dictionaries']['locations'];
+$flightOffers = $data['data']['flightOffers'];
+
+// Organizing information into a structured array
+$resultArray = [];
+
+foreach ($flightOffers as $offer) {
+    $resultArray[] = [
+        'location' => [
+            'departure' => $locations[$offer['itineraries'][0]['segments'][0]['departure']['iataCode']],
+            'arrival' => $locations[$offer['itineraries'][0]['segments'][0]['arrival']['iataCode']],
+        ],
+        'price' => [
+            'currency' => $offer['price']['currency'],
+            'total' => $offer['price']['total'],
+            'base' => $offer['price']['base'],
+            'fees' => $offer['price']['fees'],
+            'grandTotal' => $offer['price']['grandTotal'],
+            'billingCurrency' => $offer['price']['billingCurrency'],
+        ],
+        'seat' => $offer['travelerPricings'][0]['fareDetailsBySegment'][0]['includedCheckedBags']['weight'],
+        'plane' => $offer['itineraries'][0]['segments'][0]['aircraft']['code'],
+        'carrier' => $offer['itineraries'][0]['segments'][0]['carrierCode'],
+        'json' => $offer,
+
+    ];
+}
+ echo json_encode($resultArray);
+curl_close($api_ch);
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
 }
