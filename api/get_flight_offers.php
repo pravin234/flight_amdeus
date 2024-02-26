@@ -9,9 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajax'])) {
     $destinationLocationCode = $_POST['destination'];
     $departureDate = $_POST['departure_date'];
     $adults = $_POST['adults'];
+    $children = $_POST['children'];
+    $travelClass = $_POST['travelClass'];
+    
 
     // Call the function with form data
-    getFlightOffers($originLocationCode, $destinationLocationCode, $departureDate, $adults);
+    getFlightOffers($originLocationCode, $destinationLocationCode, $departureDate, $adults,$travelClass);
     exit; // Stop further execution
 }
 
@@ -102,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajax'])) {
 //     }
 // }
 
-function getFlightOffers($originLocationCode, $destinationLocationCode, $departureDate, $adults) {
+function getFlightOffers($originLocationCode, $destinationLocationCode, $departureDate, $adults,$travelClass) {
     try {
         $access_token = getAccessToken();
         $_SESSION['access_token'] = $access_token;
@@ -114,7 +117,10 @@ function getFlightOffers($originLocationCode, $destinationLocationCode, $departu
             'destinationLocationCode' => $destinationLocationCode,
             'departureDate' => $departureDate,
             'adults' => $adults,
+            'children' => @$children,
             'max' => 100,
+            'currencyCode' =>'INR',
+            'travelClass' => $travelClass,
         ];
 
         // Build the full URL with parameters
@@ -142,6 +148,10 @@ function getFlightOffers($originLocationCode, $destinationLocationCode, $departu
         // Decode the JSON response for the API call
         $flight_offers = json_decode($api_response, true);
 
+        // echo "<pre>";
+        // print_r($flight_offers['data'][0]);
+        // echo "<pre>";
+
         if (isset($flight_offers['data'])) {
             $flightDetails = [];
             foreach ($flight_offers['data'] as $flightOffer) {
@@ -151,14 +161,16 @@ function getFlightOffers($originLocationCode, $destinationLocationCode, $departu
                 $fareType = $flightOffer['pricingOptions']['fareType'][0];
                 $flightNumber = $flightOffer['itineraries'][0]['segments'][0]['number'];
                 $travelType = $flightOffer['oneWay'] ? 'One Way' : 'Round Trip';
+                
 
                 // Calculate travel duration
 
                 // Convert currency to INR
-                $eurToInrRate = 89.50;
+                // $eurToInrRate = 89.50;
                 $currency = $flightOffer['price']['currency'];
                 $totalPrice = $flightOffer['price']['total'];
-                $convertedPrice = ($currency == 'EUR') ? $totalPrice * $eurToInrRate : $totalPrice;
+                $travelClass = $flightOffer['travelerPricings'][0]['fareDetailsBySegment'][0]['cabin'];
+                // $convertedPrice = ($currency == 'EUR') ? $totalPrice * $eurToInrRate : $totalPrice;
 
                 $airline = $flightOffer['itineraries'][0]['segments'][0]['operating']['carrierCode'];
 
@@ -172,13 +184,14 @@ function getFlightOffers($originLocationCode, $destinationLocationCode, $departu
                         'departureTime' => $segment['departure']['at'],
                         'arrivalTime' => $segment['arrival']['at'],
                         'price' => $price['total'],
+                        'class' => $travelClass,
                         'availableSeats' => $flightOffer['numberOfBookableSeats'],
                         'fareType' => $fareType,
                         'flightNumber' => $flightNumber,
                         'airline' => $airline,
                         'travelType' => $travelType,
                         'currency' => $currency,
-                        'totalPrice' => number_format($convertedPrice, 2, '.', ''),
+                        'totalPrice' => number_format($totalPrice, 2, '.', ''),
                         'flightOffer' => $flightOffer,
                     );
                     $flightDetails[] = $flightDetail;

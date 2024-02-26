@@ -1,0 +1,455 @@
+{
+    "meta": {
+        "count": 2
+    },
+    "data": [
+        { 
+            "id": "1",
+            "type": "seatmap",
+            "departure": {
+                "iataCode": "BOM",
+                "terminal": "2",
+                "at": "2024-04-23T06:00:00"
+            },
+            "arrival": {
+                "iataCode": "DEL",
+                "terminal": "3",
+                "at": "2024-04-23T08:05:00"
+            },
+            "carrierCode": "UK",
+            "number": "954",
+            "operating": {
+                "carrierCode": "UK"
+            },
+            "aircraft": {
+                "code": "320"
+            },
+            "class": "V",
+            "flightOfferId": "2",
+            "segmentId": "1",
+            "decks": [
+                {
+                    "deckType": "MAIN",
+                    "deckConfiguration": {
+                        "width": 7,
+                        "length": 23,
+                        "startSeatRow": 7,
+                        "endSeatRow": 29,
+                        "startWingsX": 1,
+                        "startWingsRow": 8,
+                        "endWingsRow": 13,
+                        "exitRowsX": [
+                            3,
+                            4
+                        ]
+                    },
+                    "facilities": [
+                        {
+                            "code": "LA",
+                            "column": "A",
+                            "row": "29",
+                            "position": "REAR",
+                            "coordinates": {
+                                "x": 22,
+                                "y": 0
+                            }
+                        },
+                        {
+                            "code": "LA",
+                            "column": "F",
+                            "row": "29",
+                            "position": "REAR",
+                            "coordinates": {
+                                "x": 22,
+                                "y": 6
+                            }
+                        }
+                    ], 
+                    "seats": [   
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "7A",
+                            "characteristicsCodes": [
+                                "CH",
+                                "LS",
+                                "O",
+                                "W"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 0,
+                                "y": 0
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "7B",
+                            "characteristicsCodes": [
+                                "9",
+                                "LS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 0,
+                                "y": 1
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "7C",
+                            "characteristicsCodes": [
+                                "A",
+                                "CH",
+                                "LS",
+                                "O"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 0,
+                                "y": 2
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "7D",
+                            "characteristicsCodes": [
+                                "A",
+                                "CH",
+                                "O",
+                                "RS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 0,
+                                "y": 4
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "7E",
+                            "characteristicsCodes": [
+                                "9",
+                                "RS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 0,
+                                "y": 5
+                            }
+                        },
+                       ,
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "12C",
+                            "characteristicsCodes": [
+                                "A",
+                                "CH",
+                                "LS",
+                                "O",
+                                "OW"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 5,
+                                "y": 2
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "21E",
+                            "characteristicsCodes": [
+                                "9",
+                                "RS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 13,
+                                "y": 5
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "21F",
+                            "characteristicsCodes": [
+                                "CH",
+                                "RS",
+                                "W"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "BLOCKED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 13,
+                                "y": 6
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "22A",
+                            "characteristicsCodes": [
+                                "LS",
+                                "W"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 14,
+                                "y": 0
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "22B",
+                            "characteristicsCodes": [
+                                "9",
+                                "LS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 14,
+                                "y": 1
+                            }
+                        },
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "22C",
+                            "characteristicsCodes": [
+                                "A",
+                                "LS"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "OCCUPIED"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "OCCUPIED"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 14,
+                                "y": 2
+                            }
+                        },
+                        
+                        {
+                            "cabin": "ECONOMY",
+                            "number": "29F",
+                            "characteristicsCodes": [
+                                "1D",
+                                "RS",
+                                "W"
+                            ],
+                            "travelerPricing": [
+                                {
+                                    "travelerId": "1",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                },
+                                {
+                                    "travelerId": "2",
+                                    "seatAvailabilityStatus": "AVAILABLE"
+                                }
+                            ],
+                            "coordinates": {
+                                "x": 21,
+                                "y": 6
+                            }
+                        }
+                    ]
+                }
+            ],
+            "aircraftCabinAmenities": {
+                "power": {
+                    "isChargeable": false,
+                    "powerType": "USB_PORT",
+                    "usbType": "USB_C"
+                },
+                "seat": {
+                    "legSpace": 29,
+                    "spaceUnit": "INCHES",
+                    "tilt": "NORMAL",
+                    "medias": [
+                        {
+                            "title": "Comfortable Seats",
+                            "href": "https://pdt.content.amadeus.com/AncillaryServicesMedia/14223418_395.jpg",
+                            "description": {
+                                "text": "Settle in with comfortable seats and an ecoTHREAD blanket made from 100% recycled plastic bottles.",
+                                "lang": "EN"
+                            },
+                            "mediaType": "image"
+                        },
+                        {
+                            "title": "Stay Connected",
+                            "href": "https://pdt.content.amadeus.com/AncillaryServicesMedia/71344149_DFL.jpg",
+                            "description": {
+                                "text": "Stay connected next time you fly. Choose from our great value Wi-Fi plans.",
+                                "lang": "EN"
+                            },
+                            "mediaType": "image"
+                        },
+                        {
+                            "title": "Be Curious",
+                            "href": "https://pdt.content.amadeus.com/AncillaryServicesMedia/42266150_401.jpg",
+                            "description": {
+                                "text": "With special seat,meals, toys, and dedicated children's ice channels, we encourage curious minds and inspire tomorrow's explorers.",
+                                "lang": "EN"
+                            },
+                            "mediaType": "image"
+                        }
+                    ]
+                },
+                "wifi": {
+                    "isChargeable": true,
+                    "wifiCoverage": "FULL"
+                },
+                "entertainment": [
+                    {
+                        "isChargeable": false,
+                        "entertainmentType": "AUDIO_VIDEO_ON_DEMAND"
+                    },
+                    {
+                        "isChargeable": false,
+                        "entertainmentType": "IP_TV"
+                    }
+                ],
+                "food": {
+                    "isChargeable": false,
+                    "foodType": "SNACK"
+                },
+                "beverage": {
+                    "isChargeable": false,
+                    "beverageType": "ALCOHOLIC_AND_NON_ALCOHOLIC"
+                }
+            },
+            "availableSeatsCounters": [
+                {
+                    "travelerId": "1",
+                    "value": 69
+                },
+                {
+                    "travelerId": "2",
+                    "value": 69
+                }
+            ]
+        },
+      
+    ],
+    "dictionaries": {
+        "locations": {
+            "BOM": {
+                "cityCode": "BOM",
+                "countryCode": "IN"
+            },
+            "DEL": {
+                "cityCode": "DEL",
+                "countryCode": "IN"
+            }
+        },
+        "facilities": {
+            "LA": "Lavatory"
+        },
+        "seatCharacteristics": {
+            "A": "Aisle seat",
+            "RS": "Right side of aircraft",
+            "CH": "Chargeable seats",
+            "E": "Exit row seat",
+            "LS": "Left side of aircraft",
+            "OW": "Overwing seat(s)",
+            "7A": "In front of toilet seat",
+            "O": "Preferential seat",
+            "1": "Restricted seat - General",
+            "1D": "Restricted recline seat",
+            "V": "Seat to be left vacant or offered last",
+            "W": "Window seat",
+            "9": "Center seat (not window, not aisle)"
+        }
+    }
+}

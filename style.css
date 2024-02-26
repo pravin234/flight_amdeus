@@ -1,0 +1,52 @@
+    .invalid-feedback {
+        color: red;
+    }
+
+
+    .navbar {
+        background-color: #343a40 !important;
+    }
+
+    .navbar-brand,
+    .navbar-text {
+        color: #ffffff !important;
+    }
+
+    #search_form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #search_button {
+        background-color: #007bff;
+        border: none;
+    }
+
+    #flight_offers_result {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #flightTable th,
+    #flightTable td {
+        text-align: center;
+    }
+
+    #flightTable th {
+        background-color: #343a40;
+        color: #ffffff;
+    }
+
+    #flightTable tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #flightTable tbody tr:hover {
+        background-color: #cce5ff;
+    }
+   

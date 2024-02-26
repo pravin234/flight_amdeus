@@ -3,46 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Booking System</title>
+    <title>Login and Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+
+        .tab-content {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Flight Booking System</h2>
-        
-        <div class="row">
-            <!-- Form Section -->
-            <div class="col-md-6">
-                <form id="flightSearchForm">
-                    <div class="form-group">
-                        <label for="origin">Origin:</label>
-                        <input type="text" class="form-control" id="origin" name="origin" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="destination">Destination:</label>
-                        <input type="text" class="form-control" id="destination" name="destination" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="departureDate">Departure Date:</label>
-                        <input type="date" class="form-control" id="departureDate" name="departureDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="adults">Adults:</label>
-                        <input type="text" class="form-control" id="adults" name="adults" required>
-                    </div>
-                    <button type="button" class="btn btn-primary" id="searchFlightsBtn">Search Flights</button>
-                </form>
-            </div>
 
-            <!-- Flight Results Section -->
-            <div class="col-md-6">
-                <div id="flightResults" class="mt-3"></div>
-            </div>
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register">Register</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="login">
+            <h2>Login Form</h2>
+            <form method="post" action="login.php" onsubmit="return validateLoginForm()">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" class="form-control" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" class="form-control" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" name="login">Login</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="register">
+            <h2>Registration Form</h2>
+            <form method="post" action="register.php" onsubmit="return validateRegistrationForm()">
+                <div class="form-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" class="form-control" id="register-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password:</label>
+                    <input type="password" class="form-control" id="register-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" name="register">Register</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function validateLoginForm() {
+        var emailInput = document.getElementById('login-email').value;
+        var passwordInput = document.getElementById('login-password').value;
+
+        if (emailInput.trim() === '' || passwordInput.trim() === '') {
+            alert('Please fill in all fields.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateRegistrationForm() {
+        var emailInput = document.getElementById('register-email').value;
+        var passwordInput = document.getElementById('register-password').value;
+
+        if (emailInput.trim() === '' || passwordInput.trim() === '') {
+            alert('Please fill in all fields.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </body>
 </html>

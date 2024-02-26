@@ -1,0 +1,26 @@
+<?php
+$classToCabinMap = [
+    'F' => 'First Class',
+    'A' => 'First Class',
+    'C' => 'Business Class',
+    'J' => 'Business Class',
+    'R' => 'Business Class',
+    'D' => 'Business Class',
+    'I' => 'Business Class',
+    'W' => 'Premium Economy',
+    'P' => 'Premium Economy',
+    'Y' => 'Economy',
+    'H' => 'Economy',
+    'K' => 'Economy',
+    'M' => 'Economy',
+    'L' => 'Economy',
+    'G' => 'Economy',
+    'V' => 'Economy',
+    'S' => 'Economy',
+    'N' => 'Economy',
+    'Q' => 'Economy',
+    'O' => 'Economy',
+    'E' => 'Economy',
+    'B' => 'Basic Economy',
+];
+?>
