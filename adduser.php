@@ -29,11 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             VALUES ('$firstName', '$lastName', '$email', '$gender', '$dateOfBirth', '$birthPlace', '$contactNumber', '$documentType', '$passportNumber', '$nationality', '$address', '$address2', '$city', '$state', '$zip','$created_by')";
 
     if (mysqli_query($conn, $sql)) {
-        echo json_encode(["success" => true, "message" => "User added successfully"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Error adding user"]);
+        echo '<script> alert("Data Saved"); </script>';
+        header('Location: index.php');
+    
     }
-
+    else
+    {
+        echo '<script> alert("Data Not Saved"); </script>';
+    }
     mysqli_close($conn);
 } else {
     echo "Invalid request method!";
